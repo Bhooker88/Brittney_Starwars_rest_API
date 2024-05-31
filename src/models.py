@@ -74,8 +74,8 @@ class Character(db.Model):
             'eyes_color': self.eyes_color,
             'birth_year': self.birth_year,
             'gender': self.gender,
-            'created': self.created.strftime('%Y-%m-%d %H:%M:%S'),
-            'edited': self.edited.strftime('%Y-%m-%d %H:%M:%S'),
+            'created': self.created.strftime('%Y-%m-%d %H:%M:%S') if self.created else None,
+            'edited': self.edited.strftime('%Y-%m-%d %H:%M:%S') if self.edited else None,
             'homeworld': self.homeworld,
             'url': self.url
         }
@@ -108,11 +108,10 @@ class Planet(db.Model):
             'climate': self.climate,
             'terrain': self.terrain,
             'surface_water': self.surface_water,
-            'created': self.created.strftime('%Y-%m-%d %H:%M:%S'),
-            'edited': self.edited.strftime('%Y-%m-%d %H:%M:%S'),
+            'created': self.created.strftime('%Y-%m-%d %H:%M:%S') if self.created else None,
+            'edited': self.edited.strftime('%Y-%m-%d %H:%M:%S') if self.edited else None,
             'url': self.url
         }
-
 class Vehicle(db.Model):
     __tablename__ = 'vehicle'
     id = db.Column(db.Integer, primary_key=True)
@@ -147,8 +146,8 @@ class Vehicle(db.Model):
             'consumable': self.consumable,
             'films': self.films,
             'pilots': self.pilots,
-            'created': self.created.strftime('%Y-%m-%d %H:%M:%S'),
-            'edited': self.edited.strftime('%Y-%m-%d %H:%M:%S'),
+            'created': self.created.strftime('%Y-%m-%d %H:%M:%S') if self.created else None,
+            'edited': self.edited.strftime('%Y-%m-%d %H:%M:%S') if self.edited else None,
             'url': self.url
         }
 
@@ -184,7 +183,7 @@ class Species(db.Model):
             'average_lifespan': self.average_lifespan,
             'homeworld': self.homeworld,
             'language': self.language,
-            'created': self.created.strftime('%Y-%m-%d %H:%M:%S'),
-            'edited': self.edited.strftime('%Y-%m-%d %H:%M:%S'),
+            'created': self.created.strftime('%Y-%m-%d %H:%M:%S') if self.created else None,
+            'edited': self.edited.strftime('%Y-%m-%d %H:%M:%S') if self.edited else None,
             'url': self.url
         }
